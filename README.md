@@ -3,6 +3,9 @@
 [![CI](https://github.com/Snickersman2005/lumia-project-Web-/actions/workflows/ci.yml/badge.svg)](https://github.com/Snickersman2005/lumia-project-Web-/actions/workflows/ci.yml)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Snickersman2005/lumia-project-Web-)
 
+**Live demo:** [lumia-prague.onrender.com](https://lumia-prague.onrender.com) · [CS](https://lumia-prague.onrender.com/cs/) · [EN](https://lumia-prague.onrender.com/en/) · [RU](https://lumia-prague.onrender.com/ru/) · [UK](https://lumia-prague.onrender.com/uk/)
+*(free hosting — the first load after inactivity can take ~30 s)*
+
 Website and online booking system for a laser hair removal studio in Prague: service catalogue, price list, specialists, before/after gallery, reviews, FAQ, real-time booking with Google Calendar sync, client self-service (reschedule / cancel / erase data) and an admin panel.
 
 **Stack:** Node.js 20+ with zero runtime dependencies, vanilla JS front end, JSON storage, `node:test`, Docker, GitHub Actions.
