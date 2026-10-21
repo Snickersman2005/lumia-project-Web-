@@ -1,0 +1,27 @@
+services:
+  lumia:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TRUST_PROXY: "1"
+    volumes:
+      - lumia-data:/app/data
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    expose: ["3000"]
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    command: caddy reverse-proxy --from ${DOMAIN:-lumia.example.cz} --to lumia:3000
+    volumes:
+      - caddy-data:/data
+    depends_on: [lumia]
+
+volumes:
+  lumia-data:
+  caddy-data:

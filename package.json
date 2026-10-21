@@ -1,0 +1,16 @@
+{
+  "name": "lumia-laser-salon",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "check": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "description": "Web a online rezervace pro studio laserové epilace v Praze",
+  "license": "MIT"
+}

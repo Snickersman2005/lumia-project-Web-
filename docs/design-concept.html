@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUMIA Atelier — анализ рынка и дизайн-концепт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#261B2B;--ivory:#F8F4EF;--stone:#E6DDD4;--bronze:#B08D5B;--orchid:#6F4F7E;--sage:#5F8F78;--card:#FFFDFA;--muted:#6B5E70;--line:#DDD2C8;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',system-ui,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#F3ECE4;--ivory:#1B141E;--stone:#2A2030;--card:#231A27;--muted:#B8AABD;--line:#3A2E40;--orchid:#C3A2D1}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ivory);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{width:min(1100px,100% - 32px);margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+h1{font-size:clamp(2.8rem,7vw,5.2rem)}h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}h3{font-size:1.5rem}
+.eyebrow{font:600 .72rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--orchid);margin-bottom:14px;display:block}
+header.top{padding:80px 0 56px;border-bottom:1px solid var(--line)}
+header.top p{max-width:640px;color:var(--muted);margin-top:20px;font-size:1.1rem}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.lead{color:var(--muted);max-width:680px;margin-bottom:34px}
+.note{font-size:.85rem;color:var(--muted);border-left:2px solid var(--bronze);padding-left:14px;margin-top:22px;max-width:760px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:30px;font-size:.85rem}nav.toc a{color:var(--orchid);text-decoration:none;font-weight:600}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:.88rem;min-width:860px}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:600 .7rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--stone)}
+td b{font-weight:700}
+.sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:1px solid rgba(0,0,0,.15)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);padding:24px}
+.card h3{font-size:1.35rem;margin-bottom:8px}.card p,.card li{font-size:.92rem;color:var(--muted)}.card ul{padding-left:18px}
+.tag{display:inline-block;font:600 .68rem var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--line);margin:0 6px 6px 0;color:var(--muted)}
+.pal{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line)}
+.pal div{padding:60px 14px 14px;font-size:.78rem;line-height:1.4}.pal b{display:block;font-size:.85rem}
+.type{display:grid;gap:24px;grid-template-columns:1.2fr 1fr}
+.spec{background:var(--card);border:1px solid var(--line);padding:30px}
+.spec .d{font:500 3.4rem/1 var(--serif)}.spec .p{font:500 1.8rem var(--serif);font-variant-numeric:lining-nums;margin-top:8px}
+.btn{display:inline-block;font:600 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:15px 30px;border:1px solid var(--ink);background:var(--ink);color:var(--ivory)}
+.btn.o{background:transparent;color:var(--ink)}
+.wf{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.frame{background:var(--card);border:1px solid var(--line);padding:16px;font-size:.78rem}
+.frame>small{display:block;font:600 .65rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.bx{background:var(--stone);padding:10px 12px;margin-bottom:8px;color:var(--muted)}
+.bx.dark{background:var(--ink);color:var(--ivory)}.bx.h{min-height:110px;display:flex;align-items:flex-end}
+.bx.acc{border:1px dashed var(--orchid);background:transparent;color:var(--orchid)}
+.row{display:flex;gap:8px}.row>*{flex:1}
+.pills{display:flex;flex-wrap:wrap;gap:6px}.pills span{border:1px solid var(--line);padding:4px 10px;background:var(--card)}.pills .on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.body{display:grid;grid-template-columns:90px 1fr;gap:12px}.body svg{width:100%;height:auto}
+ol.steps{padding-left:18px}ol.steps li{margin-bottom:8px;font-size:.95rem}
+.pri{display:inline-block;font:700 .68rem var(--sans);padding:2px 9px;color:#fff}.p1{background:var(--sage)}.p2{background:var(--orchid)}.p3{background:var(--bronze)}
+@media(max-width:760px){.type{grid-template-columns:1fr}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="eyebrow">Исследование и концепт · октябрь 2026</span>
+  <h1>LUMIA Atelier</h1>
+  <p>Как выглядят и работают сайты премиальных салонов и клиник Праги, где они сильны, где слабы — и каким должен быть наш сайт, чтобы выглядеть дороже конкурентов и записывать клиентов проще.</p>
+  <nav class="toc"><a href="#method">Метод</a><a href="#audit">Аудит 7 сайтов</a><a href="#patterns">Паттерны и пробелы</a><a href="#concept">Концепция</a><a href="#palette">Цвет</a><a href="#type">Типографика</a><a href="#ui">Интерфейсы</a><a href="#booking">Запись</a><a href="#plan">План внедрения</a></nav>
+</div></header>
+
+<section id="method"><div class="wrap">
+  <span class="eyebrow">01 · Метод</span><h2>Что и как анализировалось</h2>
+  <p class="lead">Выборка — 7 сайтов Праги: два сегмента, которые пересекаются с нами. <b>Премиум-эстетика и спа</b> задают планку визуального качества; <b>лазерные студии и клиники</b> — прямые конкуренты по механике записи и подаче цен.</p>
+  <div class="grid">
+    <div class="card"><h3>Что измерено</h3><ul><li>Шрифты, размеры, цвета и кнопки — из реального CSS страниц</li><li>Структура страниц и навигация</li><li>Механика записи, доверительные элементы, подача цен</li></ul></div>
+    <div class="card"><h3>Ограничения</h3><ul><li>Страницы смотрелись в узком окне (близко к мобильному), с cookie-баннерами поверх: полноэкранную десктоп-вёрстку я не оценивал</li><li>Внутренние шаги записи (всплывающие окна, внешние системы) не проходил до конца и не оставлял заявок. Ниже помечено, что видно, а что нет</li><li>«Премиальность» определялась по самопозиционированию и визуальному языку, а не по рейтингу: надёжного независимого рейтинга найти не удалось</li></ul></div>
+  </div>
+</div></section>
+
+<section id="audit"><div class="wrap">
+  <span class="eyebrow">02 · Аудит</span><h2>Семь сайтов в сравнении</h2>
+  <p class="lead">Цвета и шрифты — измерено в браузере. Остальное — по структуре страниц.</p>
+  <div class="tw"><table>
+    <tr><th>Сайт</th><th>Сегмент / образ</th><th>Цвет</th><th>Типографика</th><th>Кнопки и запись</th><th>Сильное / слабое</th></tr>
+    <tr><td><b>Four Seasons Prague — AVA Spa</b></td><td>Люкс, отельный спа. Чёрная шапка, большие интерьерные фото</td><td><i class="sw" style="background:#000"></i>чёрный <i class="sw" style="background:#fff"></i>белый <i class="sw" style="background:#F8F8F8"></i>светло-серый</td><td>Заголовки Neue Helvetica Light, 28px, КАПС, трекинг 6px; текст — гарнитурная антиква (Monotype Garamond) 18px</td><td>Квадратная чёрная «BOOK NOW» CAPS. Cookie: «Reject all» вровень с «Accept»</td><td>Сильное: тишина, воздух, контраст «лёгкий гротеск + антиква». Слабое: монохром без акцента; чисто визуально, мало цены/логики</td></tr>
+    <tr><td><b>IEM SPA</b> (Прага/Братислава)</td><td>Longevity-клиника: «Не предлагаем всё, предлагаем лучшее»</td><td><i class="sw" style="background:#BA826B"></i>медь <i class="sw" style="background:#3A3A3A"></i>графит <i class="sw" style="background:#EEEAE7"></i>тёплый серый <i class="sw" style="background:#fff"></i></td><td>TiemposHeadline Light 25px, КАПС, трекинг 10px; текст Metric 16px</td><td>Контурная кнопка «Online Rezervace» в меди; в меню: Procedury, Special Offers, VIP Zone</td><td>Сильное: самый «дорогой» тон — медь + графит, выбор города плитками. Слабое: сверхширокий трекинг на длинных заголовках трудно читать</td></tr>
+    <tr><td><b>Face Place</b> (Винограды)</td><td>«Клиника эстетики голливудских звёзд», бренд-ориентированная, на Shopify</td><td><i class="sw" style="background:#00425E"></i>глубокий сине-бирюзовый <i class="sw" style="background:#19232A"></i>текст <i class="sw" style="background:#fff"></i></td><td>Собственные шрифты (Heading/Body), заголовки 600</td><td>Квадратная «Rezervace» CAPS; подарочные сертификаты, магазин, поиск и корзина</td><td>Сильное: полноэкранное фото/видео, сертификаты. Слабое: cookie-плашка закрывает половину мобильного экрана</td></tr>
+    <tr><td><b>Premier Clinic</b></td><td>Клиника пластической хирургии «премиум», лазерная эпиляция — раздел</td><td><i class="sw" style="background:#451325"></i>бордо <i class="sw" style="background:#F8F6F4"></i>тёплый белый <i class="sw" style="background:#F2F2EF"></i></td><td>ABC Diatype Light, 36px, мягкий гротеск</td><td>Плоские кнопки; нижняя липкая панель «Онлайн-смета / Онлайн-запись» + WhatsApp; мегаменю из 9 плиток</td><td>Сильное: «от 750 Kč» в первом экране, честное «успех не гарантируем», 4,5 / 727 отзывов Google, бесплатная пробная зона. Слабое: кнопки записи ведут на контакты, календаря на странице нет</td></tr>
+    <tr><td><b>Skinology</b></td><td>Тёплый бьюти-салон, нежный, женский</td><td><i class="sw" style="background:#F4ECE6"></i>кремовый <i class="sw" style="background:#F3AAA9"></i>розовый <i class="sw" style="background:#34261C"></i>коричневый</td><td>Cormorant Light 42px, КАПС + курсив-акценты; текст Mulish</td><td>Круглые розовые кнопки (radius 150px); запись — во внешней системе (alteg.io); сертификаты</td><td>Сильное: Cormorant + кремовый тон, вставки курсивом в заголовке. Слабое: смешение RU/CS/EN, перевод «машинный», устаревшие акции</td></tr>
+    <tr><td><b>Laser Clinic</b></td><td>Массовый лазер, сети студий (Винограды, Высочаны)</td><td><i class="sw" style="background:#0077B6"></i>синий <i class="sw" style="background:#F1FFFE"></i>мятный <i class="sw" style="background:#fff"></i></td><td>Frank Ruhl Libre 500 36px + Inter 14px</td><td>Скруглённые синие кнопки; запись во всплывающем окне; квиз на скидку 50%; языки EN/CZ/RU/UA</td><td>Сильное: 4 языка, цены по 4 тарифам зон, блоки «до/после», FAQ, модель лазера. Слабое: скидочный тон, текст 14px, «0» в счётчиках, неточности в прайсе</td></tr>
+    <tr><td><b>Altos Klinika</b></td><td>Лазерная дерматология, медицинский стиль</td><td><i class="sw" style="background:#00C1CF"></i>бирюза <i class="sw" style="background:#546AA9"></i>индиго <i class="sw" style="background:#6E6E6E"></i>серый текст</td><td>Poppins 500 40px + Open Sans 15px</td><td>Бирюзовая «Reserve» в шапке; встроенная форма записи на странице эпиляции; прайс по зонам за сеанс (1 490–9 990 Kč); 14 вопросов-ответов</td><td>Сильное: автор-медсестра и дата обновления на странице, оборудование расписано. Слабое: серый текст контраст ~5:1 на мелком кегле, переполненное меню, большой cookie-баннер</td></tr>
+  </table></div>
+  <p class="note">Mandarin Oriental и другие отельные спа в выборку не вошли: страница спа не открылась (404), а чужие данные я не домысливаю.</p>
+</div></section>
+
+<section id="patterns"><div class="wrap">
+  <span class="eyebrow">03 · Выводы</span><h2>Что делает сайт «дорогим» — и где пустота</h2>
+  <div class="grid">
+    <div class="card"><h3>Язык премиума</h3><ul><li>Светлые, тёплые нейтральные фоны + 1 приглушённый акцент (медь, бордо, глубокий бирюзовый)</li><li>Лёгкая антиква или тонкий гротеск; капс с широким трекингом — только для коротких надписей</li><li>Прямоугольные кнопки без радиуса, контурные; мало цветов</li><li>Много воздуха, крупная фотография, мало текста в первом экране</li></ul></div>
+    <div class="card"><h3>Язык «массовой» лазерной студии</h3><ul><li>Яркий синий/бирюзовый, скруглённые кнопки</li><li>Скидки, квизы, счётчики «10 000 клиентов»</li><li>Много карточек, мелкий текст, длинные меню</li></ul></div>
+    <div class="card"><h3>Пробелы рынка (наши возможности)</h3><ul><li><b>Запись:</b> у просмотренных конкурентов она во всплывающем окне, внешней системе или форме-контакте; живого выбора мастера, даты и времени на самой странице я не увидел</li><li><b>Цены:</b> часто «от …» или тарифы зон; нет подсчёта за несколько зон и курса</li><li><b>Языки:</b> 3–4 языка у сетей, но в клиниках премиум-класса качество перевода неровное</li><li><b>Доверие:</b> лучшие примеры (Premier, Altos) честно пишут про ограничения и автора-врача, но визуально это «медицинский» сайт, а не «атмосфера»</li></ul></div>
+  </div>
+  <div class="card" style="margin-top:18px;background:var(--stone)"><h3>Позиция LUMIA Atelier</h3><p style="color:var(--ink)">Атмосфера люкс-спа <b>плюс</b> прозрачность и скорость лазерной студии: «выбрать зоны → увидеть итог → записаться за 40 секунд», на 4 языках, с честными медицинскими оговорками. Не скидки, а ясность.</p></div>
+</div></section>
+
+<section id="concept"><div class="wrap">
+  <span class="eyebrow">04 · Концепция</span><h2>Принципы дизайна</h2>
+  <div class="grid">
+    <div class="card"><h3>1. Тишина</h3><p>Один акцент, много воздуха, одна идея на экран. Анимации медленные и опциональные (prefers-reduced-motion).</p></div>
+    <div class="card"><h3>2. Ясность цены</h3><p>Цена за сеанс и курс — рядом. Итог по выбранным зонам виден всегда.</p></div>
+    <div class="card"><h3>3. Медицинская честность</h3><p>Прибор, длина волны, имя врача и дата проверки текста; оговорка «результат зависит от…».</p></div>
+    <div class="card"><h3>4. Запись в 3 касания</h3><p>Зоны → время → контакты. Ближайшее окно предлагаем сами.</p></div>
+    <div class="card"><h3>5. Четыре языка как норма</h3><p>Шрифты с кириллицей и латинским расширением, не «машинный» перевод, hreflang и отдельные адреса /cs /ru /uk /en.</p></div>
+  </div>
+</div></section>
+
+<section id="palette"><div class="wrap">
+  <span class="eyebrow">05 · Цвет</span><h2>Палитра «Слоновая кость и сливовая тень»</h2>
+  <p class="lead">Чуть темнее и теплее, чем сейчас: исчезает «сладкий» розовый градиент, остаются сливовый, слоновая кость, бронза как тонкая линия и один орхидейный акцент для действий.</p>
+  <div class="pal">
+    <div style="background:#261B2B;color:#F8F4EF"><b>Ink · #261B2B</b>Текст, тёмные секции, основная кнопка</div>
+    <div style="background:#F8F4EF;color:#261B2B"><b>Ivory · #F8F4EF</b>Фон страницы</div>
+    <div style="background:#E6DDD4;color:#261B2B"><b>Stone · #E6DDD4</b>Карточки, разделители</div>
+    <div style="background:#B08D5B;color:#fff"><b>Bronze · #B08D5B</b>Тонкие линии, цифры (не для текста)</div>
+    <div style="background:#6F4F7E;color:#fff"><b>Orchid · #6F4F7E</b>Ссылки, фокус, выбор (контраст на слоновой кости ≈ 6,5:1)</div>
+    <div style="background:#5F8F78;color:#fff"><b>Sage · #5F8F78</b>Подтверждение записи</div>
+  </div>
+  <p class="note">Тёмная тема: фон #1B141E, текст #F3ECE4, акцент светлее (#C3A2D1). Градиенты — только как тонкий свет в фото, не как заливка кнопок.</p>
+</div></section>
+
+<section id="type"><div class="wrap">
+  <span class="eyebrow">06 · Типографика</span><h2>Антиква для голоса, гротеск для дела</h2>
+  <div class="type">
+    <div class="spec">
+      <span class="eyebrow">Cormorant Garamond · 400/500</span>
+      <div class="d">Гладкость,<br>как тишина</div>
+      <div class="p">Hladká pokožka · 1 290 Kč</div>
+      <p style="margin-top:22px;font-size:.95rem;color:var(--muted)">Manrope · 400/600 · текст 16/1.65. Czech, русский и украинский — все символы в наборе.</p>
+      <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><span class="btn">Rezervovat</span><span class="btn o">Konzultace zdarma</span></div>
+    </div>
+    <div class="card"><h3>Правила</h3><ul>
+      <li>Заголовки: Cormorant Garamond 500, регистр предложения, межстрочный 1.1; на мобильных — не тоньше 500</li>
+      <li>Капс с трекингом .16–.2em — только для надписей на кнопках и «эйбровов» (12–13px), не для длинных заголовков (у IEM SPA трекинг 10px ломает читаемость)</li>
+      <li>Цены: Cormorant, lining-nums, чтобы цифры не «прыгали»</li>
+      <li>Текст: Manrope 16–17px, цвет не светлее #4A3F4F на слоновой кости</li>
+      <li><b>Исправление текущего сайта:</b> шрифт Fraunces не содержит кириллицы, поэтому русские и украинские заголовки сейчас рисуются запасным Georgia — Cormorant закрывает все 4 языка</li></ul></div>
+  </div>
+</div></section>
+
+<section id="ui"><div class="wrap">
+  <span class="eyebrow">07 · Интерфейсы</span><h2>Ключевые экраны</h2>
+  <p class="lead">Схемы — рабочие wireframes, не финальный визуал: фотографии и иллюстрации нужны отдельно (съёмка студии и мастеров).</p>
+  <div class="wf">
+    <div class="frame"><small>Шапка и главный экран · десктоп</small>
+      <div class="row"><div class="bx">LUMIA</div><div class="bx" style="flex:3">Procedury · Ceník · Specialisté · Výsledky · Kontakt</div><div class="bx">CS ▾</div><div class="bx dark">Rezervovat</div></div>
+      <div class="bx h dark">Фото-видео интерьера (медленное)<br>H1: «Hladká pokožka, bez spěchu»</div>
+      <div class="pills"><span>MOTUS / модель лазера</span><span>Dermatolog dohlíží</span><span>Google 4,9 · N отзывов*</span><span>Konzultace zdarma</span></div>
+      <p style="margin-top:8px;color:var(--muted)">*показывать только реальные цифры со ссылкой на источник.</p>
+    </div>
+    <div class="frame"><small>Выбор зон + живой итог (главная идея)</small>
+      <div class="pills" style="margin-bottom:10px"><span class="on">Ženy</span><span>Muži</span> <span style="margin-left:auto">Přední / Zadní</span></div>
+      <div class="body"><svg viewBox="0 0 90 220"><circle cx="45" cy="18" r="13" fill="none" stroke="#B08D5B"/><path d="M25 38h40l8 70-12 4-4 100H33l-4-100-12-4z" fill="none" stroke="#B08D5B"/><circle cx="30" cy="48" r="7" fill="#6F4F7E" opacity=".6"/><circle cx="45" cy="115" r="9" fill="#6F4F7E" opacity=".6"/></svg>
+        <div><div class="pills"><span class="on">Podpaží 690</span><span class="on">Bikiny 1 690</span><span>Lýtka 1 490</span><span>Celé nohy 2 790</span></div>
+        <div class="bx dark" style="margin-top:10px">Celkem 2 380 Kč · 45 min<br><small>6 sezení: −10 %</small></div></div></div>
+      <div class="bx acc">Тап по зоне на теле → добавляется в итог → «Rezervovat vybrané»</div>
+    </div>
+    <div class="frame"><small>Цена: сеанс / курс</small>
+      <div class="pills" style="margin-bottom:10px"><span class="on">1 sezení</span><span>Kúra 6×</span><span>Kúra 8×</span></div>
+      <div class="bx">Podpaží <span style="float:right">690 Kč</span></div><div class="bx">Podpaží <span style="float:right">3 730 Kč <s>4 140</s></span></div>
+      <div class="bx acc">Строки раскрываются: время, подготовка, противопоказания. Без «от».</div></div>
+    <div class="frame"><small>Мобильная версия</small>
+      <div class="row"><div class="bx dark h" style="flex:1">Hero + H1</div><div class="bx" style="flex:1">Зоны<br>(список вместо тела)</div></div>
+      <div class="bx dark" style="position:sticky">Rezervovat · WhatsApp · Zavolat</div>
+      <div class="bx acc">Липкая нижняя панель в зоне большого пальца (как у Premier Clinic, но с записью, а не с формой). Cookie — компактная карточка снизу слева с равными «Přijmout / Odmítnout», не закрывающая героя.</div></div>
+  </div>
+</div></section>
+
+<section id="booking"><div class="wrap">
+  <span class="eyebrow">08 · Запись</span><h2>Механика бронирования v2</h2>
+  <p class="lead">Сейчас: 4 шага, одна процедура, выбор мастера, слоты и подтверждение с кнопкой Google Календаря. Что добавить, чтобы стать лучшим на рынке.</p>
+  <div class="wf">
+    <div class="frame"><small>Экран записи · панель справа (drawer)</small>
+      <div class="bx">① Зоны (из селектора) · итог и длительность</div>
+      <div class="bx">② <b>Nejbližší volné:</b> <span class="pills" style="display:inline-flex"><span>Dnes 17:30</span><span>Zítra 10:00</span><span>Čt 12:30</span></span></div>
+      <div class="bx">Календарь месяцем: точки на днях со слотами · мастер — аватар или «кто угодно»</div>
+      <div class="bx">③ Имя · Телефон · Email · комментарий · согласие</div>
+      <div class="bx dark">Potvrdit rezervaci</div></div>
+    <div class="frame"><small>После записи</small>
+      <div class="bx">✓ Karta potvrzení: что, когда, где, кто</div>
+      <div class="bx">Google / Apple / .ics · «Как добраться» · «Что взять и как подготовиться» (из карточки процедуры)</div>
+      <div class="bx acc">Ссылка «Změnit / zrušit» с одноразовым токеном — сейчас её нет</div>
+      <div class="bx acc">Напоминание SMS/e-mail за 24 ч и 2 ч — сейчас не отправляется</div></div>
+    <div class="frame"><small>Если слотов нет</small><div class="bx">«Zapsat na čekací listinu» → клиент получает письмо при освобождении окна</div><div class="bx">Предложение ближайшего окна у другого мастера</div><div class="bx acc">Конверсия: не терять посетителя на «нет мест»</div></div>
+  </div>
+  <div class="grid" style="margin-top:22px">
+    <div class="card"><h3>Первый визит: консультация</h3><ul><li>Низкий порог: бесплатная 15-минутная консультация и тест-вспышка как отдельная услуга в записи</li><li>Пример на рынке: бесплатная первая зона у Premier Clinic — но дорогим это не выглядит, поэтому у нас формулируем как «консультация», а не «акция»</li></ul></div>
+    <div class="card"><h3>Доверие</h3><ul><li>Карточка прибора: модель, длина волны, сертификат</li><li>«Текст проверила: Elena Veselá, дерматолог · обновлено дата» (приём Altos)</li><li>Реальные «до/после» только с письменным согласием; пока их нет — не показывать иллюстрации как результат</li><li>Отзывы — со ссылкой на источник (Google)</li></ul></div>
+    <div class="card"><h3>Язык</h3><ul><li>Сегментный переключатель CS · RU · UK · EN с флагом, в шапке и в подвале</li><li>Отдельные URL /cs /ru /uk /en и hreflang для поиска</li><li>Перевод — носителем, не машинный (замечено у конкурентов)</li></ul></div>
+  </div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <span class="eyebrow">09 · План</span><h2>Что внедрять в нашем сайте и в каком порядке</h2>
+  <div class="tw"><table>
+    <tr><th>Приоритет</th><th>Задача</th><th>Зачем</th><th>Объём</th></tr>
+    <tr><td><span class="pri p1">1</span></td><td>Новая палитра и типографика (Cormorant + Manrope), прямоугольные контурные кнопки, убрать розово-фиолетовый градиент</td><td>Визуальный «класс» и кириллица в заголовках</td><td>Только CSS, ~½ дня</td></tr>
+    <tr><td><span class="pri p1">1</span></td><td>Компактный cookie-баннер с равными кнопками</td><td>Не закрывать первый экран, GDPR</td><td>Небольшой</td></tr>
+    <tr><td><span class="pri p1">1</span></td><td>Ссылка «изменить / отменить запись» с токеном</td><td>Меньше пропусков, доверие</td><td>Сервер + страница</td></tr>
+    <tr><td><span class="pri p2">2</span></td><td>Запись нескольких зон за один визит (сумма времени и цены)</td><td>Основа для селектора зон и комплексов</td><td>Сервер + запись</td></tr>
+    <tr><td><span class="pri p2">2</span></td><td>«Ближайшие окна» и календарь месяцем</td><td>Быстрее выбор, выше конверсия</td><td>Интерфейс записи</td></tr>
+    <tr><td><span class="pri p2">2</span></td><td>Прайс «сеанс / курс 6× / 8×»</td><td>Прозрачность и допродажа курсов</td><td>Интерфейс + поля цены курса</td></tr>
+    <tr><td><span class="pri p2">2</span></td><td>E-mail/SMS подтверждения и напоминания</td><td>Требуется провайдер (SMTP/SMS)</td><td>Интеграция</td></tr>
+    <tr><td><span class="pri p3">3</span></td><td>Интерактивный селектор зон на теле (женщины/мужчины, спереди/сзади)</td><td>Фирменный элемент, нет у просмотренных конкурентов</td><td>SVG-иллюстрация + логика</td></tr>
+    <tr><td><span class="pri p3">3</span></td><td>Фотосъёмка студии и команды, реальные «до/после», карточка прибора</td><td>Без фото премиум не получится, это самое слабое место сейчас</td><td>Съёмка и материалы клиента</td></tr>
+    <tr><td><span class="pri p3">3</span></td><td>Отдельные URL по языкам, hreflang, список ожидания</td><td>SEO и конверсия</td><td>Сервер</td></tr>
+  </table></div>
+  <p class="note">Источники анализа: сайты altos-klinika.cz, laser-clinic.cz, skinology.cz, premier-clinic.cz, iemspa.cz, faceplace.cz, fourseasons.com/prague/spa. Структура страниц — по состоянию на октябрь 2026 по доступному тексту и рендеру в узком окне.</p>
+</div></section>
+</body>
+</html>

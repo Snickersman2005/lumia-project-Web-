@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUMIA — studio laserové epilace</title>
+<meta name="description" content="Laserová epilace diodovým laserem: pohodlně, bezpečně, s garancí výsledku. Ceník, specialisté a online rezervace za minutu.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%233B2A3F'/%3E%3Cpath d='M16 6l2 7 7 3-7 3-2 7-2-7-7-3 7-3z' fill='%23F0B8A8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/premium.css">
+<!--SEO-->
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip"></a>
+
+<header class="header" id="top">
+  <div class="wrap header__in">
+    <a href="./" class="brand" aria-label="LUMIA">
+      <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true"><rect width="32" height="32" rx="10" fill="url(#lg)"/><path d="M16 6l2 7 7 3-7 3-2 7-2-7-7-3 7-3z" fill="#fff"/><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#261B2B"/><stop offset="1" stop-color="#4A3550"/></linearGradient></defs></svg>
+      <span class="brand__name" data-bind="name">LUMIA</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#services" data-i18n="nav.services"></a>
+      <a href="#prices" data-i18n="nav.prices"></a>
+      <a href="#team" data-i18n="nav.team"></a>
+      <a href="#results" data-i18n="nav.results"></a>
+      <a href="#reviews" data-i18n="nav.reviews"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
+      <a href="#contacts" data-i18n="nav.contacts"></a>
+    </nav>
+    <a class="phone" data-bind-href="tel" data-bind="phone" href="#"></a>
+    <div class="lang" id="lang" data-i18n-aria="lang"></div>
+    <a href="#booking" class="btn btn--sm header__cta" data-i18n="cta.book"></a>
+    <button class="burger" id="burger" data-i18n-aria="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"><span class="glow glow--a"></span><span class="glow glow--b"></span></div>
+  <div class="wrap hero__in">
+    <div class="hero__text">
+      <p class="eyebrow reveal"><span data-i18n="hero.eyebrow"></span> · <span data-bind="city"></span></p>
+      <h1 class="reveal" data-i18n-html="hero.h1"></h1>
+      <p class="lead reveal" data-i18n="hero.lead"></p>
+      <div class="hero__cta reveal">
+        <a href="#booking" class="btn" data-i18n="hero.cta1"></a>
+        <a href="#services" class="btn btn--ghost" data-i18n="hero.cta2"></a>
+      </div>
+      <ul class="hero__facts reveal">
+        <li><b id="minPrice"></b><span data-i18n="hero.f1"></span></li>
+        <li><b>6–8</b><span data-i18n="hero.f2"></span></li>
+        <li><b id="freeConsult">0</b><span data-i18n="hero.f3"></span></li>
+      </ul>
+    </div>
+    <div class="hero__visual reveal" aria-label="">
+      <div class="arch">
+        <img class="arch__img" id="heroImg" alt="" hidden>
+        <div class="arch__art" aria-hidden="true">
+          <span class="arch__ring arch__ring--1"></span><span class="arch__ring arch__ring--2"></span><span class="arch__ring arch__ring--3"></span>
+          <span class="arch__beam"></span><span class="arch__spark"></span>
+        </div>
+        <span class="arch__caption" aria-hidden="true">808 nm</span>
+      </div>
+      <a class="glass glass--slot" href="#booking">
+        <small data-i18n="hero.next"></small>
+        <b id="nextSlot">—</b>
+        <span class="glass__go" aria-hidden="true">→</span>
+      </a>
+      <div class="glass glass--rating"><b id="heroRating">5,0</b><span class="stars" aria-hidden="true">★★★★★</span><small data-i18n="hero.rating"></small></div>
+      <div class="glass glass--tech"><small data-i18n="hero.tech1"></small><b data-i18n="hero.tech2"></b></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+<section class="sec sec--tight">
+  <div class="wrap features">
+    <div class="feature"><div class="ico">❄</div><h3 data-i18n="ft1.h"></h3><p data-i18n="ft1.p"></p></div>
+    <div class="feature"><div class="ico">✚</div><h3 data-i18n="ft2.h"></h3><p data-i18n="ft2.p"></p></div>
+    <div class="feature"><div class="ico">◔</div><h3 data-i18n="ft3.h"></h3><p data-i18n="ft3.p"></p></div>
+    <div class="feature"><div class="ico">★</div><h3 data-i18n="ft4.h"></h3><p data-i18n="ft4.p"></p></div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec__head"><p class="eyebrow" data-i18n="svc.eyebrow"></p><h2 data-i18n="svc.h2"></h2><p class="sub" data-i18n="svc.sub"></p></div>
+    <div class="tabs" id="svcTabs" role="tablist"></div>
+    <div class="cards" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="promos">
+  <div class="wrap">
+    <div class="sec__head"><p class="eyebrow" data-i18n="promos.eyebrow"></p><h2 data-i18n="promos.h2"></h2></div>
+    <div class="promos" id="promoGrid"></div>
+  </div>
+</section>
+
+<section class="sec" id="prices">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head"><p class="eyebrow" data-i18n="prices.eyebrow"></p><h2 data-i18n="prices.h2"></h2><p class="sub" data-i18n="prices.sub"></p></div>
+    <div id="priceList" class="prices"></div>
+  </div>
+</section>
+
+<section class="sec sec--dark" id="how">
+  <div class="wrap">
+    <div class="sec__head"><p class="eyebrow" data-i18n="how.eyebrow"></p><h2 data-i18n="how.h2"></h2></div>
+    <ol class="steps">
+      <li><span>1</span><h3 data-i18n="how1.h"></h3><p data-i18n="how1.p"></p></li>
+      <li><span>2</span><h3 data-i18n="how2.h"></h3><p data-i18n="how2.p"></p></li>
+      <li><span>3</span><h3 data-i18n="how3.h"></h3><p data-i18n="how3.p"></p></li>
+      <li><span>4</span><h3 data-i18n="how4.h"></h3><p data-i18n="how4.p"></p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="team">
+  <div class="wrap">
+    <div class="sec__head"><p class="eyebrow" data-i18n="team.eyebrow"></p><h2 data-i18n="team.h2"></h2><p class="sub" data-i18n="team.sub"></p></div>
+    <div class="team" id="teamGrid"></div>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="results">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head"><p class="eyebrow" data-i18n="ba.eyebrow"></p><h2 data-i18n="ba.h2"></h2><p class="sub" data-i18n="ba.sub"></p></div>
+    <div class="ba-tabs" id="baTabs"></div>
+    <div class="ba" id="ba">
+      <div class="ba__layer" id="baBeforeBox"><canvas id="baBefore" width="900" height="520"></canvas></div>
+      <div class="ba__after" id="baAfterWrap"><canvas id="baAfter" width="900" height="520"></canvas></div>
+      <span class="ba__tag ba__tag--l" data-i18n="ba.before"></span><span class="ba__tag ba__tag--r" id="baTagAfter"></span>
+      <div class="ba__handle" id="baHandle"><i></i></div>
+      <input type="range" min="0" max="100" value="50" id="baRange" data-i18n-aria="ba.aria">
+    </div>
+    <p class="ba__note" id="baNote"></p>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec__head"><p class="eyebrow" data-i18n="rev.eyebrow"></p><h2 data-i18n="rev.h2"></h2><p class="sub" id="ratingLine"></p></div>
+    <div class="reviews" id="reviewGrid"></div>
+    <details class="review-form">
+      <summary class="btn btn--ghost" data-i18n="rev.btn"></summary>
+      <form id="reviewForm" class="form form--inline" novalidate>
+        <input name="name" data-i18n-ph="rev.name" required maxlength="60">
+        <input name="service" data-i18n-ph="rev.service" maxlength="80">
+        <select name="rating" data-i18n-aria="rev.rating"><option value="5">★★★★★ 5</option><option value="4">★★★★☆ 4</option><option value="3">★★★☆☆ 3</option><option value="2">★★☆☆☆ 2</option><option value="1">★☆☆☆☆ 1</option></select>
+        <textarea name="text" rows="3" data-i18n-ph="rev.text" required maxlength="1000"></textarea>
+        <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit" data-i18n="rev.send"></button>
+        <p class="form__msg" id="reviewMsg" role="status"></p>
+      </form>
+    </details>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="faq">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head"><p class="eyebrow" data-i18n="faq.eyebrow"></p><h2 data-i18n="faq.h2"></h2></div>
+    <div id="faqList" class="faq"></div>
+  </div>
+</section>
+
+<section class="sec sec--book" id="booking">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head"><p class="eyebrow" data-i18n="book.eyebrow"></p><h2 data-i18n="book.h2"></h2><p class="sub" data-i18n="book.sub"></p></div>
+    <div class="book" id="book">
+      <ol class="book__steps" id="bookSteps">
+        <li data-s="1" data-i18n="s1"></li><li data-s="2" data-i18n="s2"></li><li data-s="3" data-i18n="s3"></li><li data-s="4" data-i18n="s4"></li>
+      </ol>
+      <div class="book__body" id="bookBody"></div>
+      <div class="book__summary" id="bookSummary" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contacts">
+  <div class="wrap contacts">
+    <div>
+      <p class="eyebrow" data-i18n="ct.eyebrow"></p>
+      <h2 data-i18n="ct.h2"></h2>
+      <dl class="cinfo">
+        <dt data-i18n="ct.addr"></dt><dd data-bind="address"></dd>
+        <dt data-i18n="ct.hours"></dt><dd><span data-i18n="ct.daily"></span> <span data-bind="hours"></span></dd>
+        <dt data-i18n="ct.phone"></dt><dd><a data-bind-href="tel" data-bind="phone" href="#"></a></dd>
+        <dt data-i18n="ct.email"></dt><dd><a data-bind-href="mailto" data-bind="email" href="#"></a></dd>
+      </dl>
+      <div class="social"><a data-bind-href="instagram" href="#" target="_blank" rel="noopener">Instagram</a><a data-bind-href="telegram" href="#" target="_blank" rel="noopener">Telegram</a></div>
+      <p class="route__label" data-i18n="ct.route"></p>
+      <div class="route">
+        <a class="btn btn--sm" id="routeGoogle" target="_blank" rel="noopener" href="#">Google Maps</a>
+        <a class="btn btn--ghost btn--sm" id="routeMapy" target="_blank" rel="noopener" href="#">Mapy.cz</a>
+        <a class="btn btn--ghost btn--sm" id="routeApple" target="_blank" rel="noopener" href="#">Apple Maps</a>
+      </div>
+    </div>
+    <div class="map" id="mapBox"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div class="footer__legal">
+      <p>© <span id="year"></span> <span data-bind="companyName"></span> · IČO <span data-bind="ico"></span><span id="dicLine"></span> · <span data-bind="address"></span></p>
+      <p><span id="vatNote"></span> <span data-i18n="footer.text"></span></p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="privacy/" data-i18n="footer.privacy"></a>
+      <button type="button" class="linklike" id="cookieSettings" data-i18n="footer.cookies"></button>
+      <a href="/admin" rel="nofollow" data-i18n="footer.admin"></a>
+    </nav>
+  </div>
+</footer>
+
+<a href="#booking" class="sticky-cta btn" data-i18n="cta.book"></a>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal__x" id="modalX" data-i18n-aria="close">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="/i18n.js"></script>
+<script src="/consent.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

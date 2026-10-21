@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: lumia-prague
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: RETENTION_MONTHS
+        value: "24"
+      - key: ADMIN_PASSWORD
+        generateValue: true
